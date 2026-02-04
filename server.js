@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const productRoutes = require('./routes/productRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 
@@ -15,6 +16,7 @@ connectDB();
 
 // Routes
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 // Base route
 app.get('/', (req, res) => {
